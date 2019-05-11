@@ -111,6 +111,23 @@ $(document).ready(function() {
     authorSelect.val(authorId);
   }
 
+  function getRecipes() {
+    $.get("/api/recipes", renderRecipeList);
+  }
+  // Function to either render a list of authors, or if there are none, direct the user to the page
+  // to create an author first
+  function renderRecipeList(data) {
+     var rowsToAdd = [];
+    for (var i = 0; i < data.length; i++) {
+      rowsToAdd.push(createRecipeRow(data[i]));
+    }
+    recipeSelect.empty();
+    console.log(rowsToAdd);
+    console.log(recipeSelect);
+    recipeSelect.append(rowsToAdd);
+    recipeSelect.val(recipeId);
+  }
+
   // Creates the author options in the dropdown
   function createAuthorRow(author) {
     var listOption = $("<option>");
