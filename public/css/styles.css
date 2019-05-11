@@ -1,43 +1,73 @@
-button.submit {
-  float: right;
+body{
+
+  }
+  
+/* CSS Code for Dashboard */
+.navigation{
+  border: red solid 5px;
+  padding: 20px;
+  border-radius: 25px;
 }
 
-form#cms {
-  margin-top: 50px;
+.img-thumbnail{
+  width: 60%;
+  border: none;
+  display:block;
+  margin: 0 auto;
+  vertical-align: middle;
 }
 
-#cms textarea {
-  resize: none;
+
+.firstbutton {
+  background:red;
+  margin:0 auto;
+  width:100%;
+  height:100px;
+  border-radius: 25px;
 }
 
-.card-header button.delete,
-button.edit {
-  float: right;
-  margin: 5px;
+.secondbutton {
+  background:red;
+  width:100%;
+  height:100px; 
+  border-radius: 25px;
 }
 
-.author-container {
-  margin-top: 50px;
+.thirdbutton {
+  background:red;
+  width:100%;
+  height:100px;
+  border-radius: 25px;
 }
 
-.author-list {
-  margin-top: 25px;
-}
-
-.blog-container {
+.results{
   margin-top: 30px;
 }
 
-.blog {
-  margin-top: 30px;
+#Lotterypick
+.card-header{
+    background:red;
+    border-radius: 22px 22px 0px 0px;
+  }
+
+#Lotterypick
+{
+  border: red solid 5px;
+  border-radius: 25px;
+  height: 100%;
+  }
+  
+
+
+#TopPerformer
+.card-header{
+  background:red;
+  border-radius: 20px 22px 0px 0px;
 }
 
-#author-name {
-  width: 100%;
-  height: 35px;
-  margin-top: 5px;
-}
-
-.top-30 {
-  margin-top: 30px;
-}
+#TopPerformer
+{
+  border: red solid 5px;
+  border-radius: 25px;
+  height: 100%;
+  }

@@ -14,12 +14,10 @@ module.exports = function(app) {
 
   // GET route for getting all of the posts
   app.get("/api/recipes", function(req, res) {
-    var query = {};
-    if (req.query.user_id) {
-      query.UserId = req.query.user_id;
-    }
     db.Recipe.findAll({
-      where: query
+      where: {
+        title: "Ziti"
+      }
     }).then(function(result) {
       res.json(result);
     });
@@ -33,6 +31,19 @@ module.exports = function(app) {
       }
     }).then(function(result) {
       console.log(result);
+      res.json(result);
+    });
+  });
+
+  app.get("/api/recipes", function(req, res) {
+    var query = {};
+    if (req.query.author_id) {
+      query.AuthorId = req.query.author_id;
+    }
+    db.Post.findAll({
+      where: query
+    }).then(function(result) {
+      console.log
       res.json(result);
     });
   });
