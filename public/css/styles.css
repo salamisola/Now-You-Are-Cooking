@@ -1,69 +1,73 @@
-/* 
+body{
+
+  }
+  
+/* CSS Code for Dashboard */
+.navigation{
+  border: red solid 5px;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.img-thumbnail{
+  width: 60%;
+  border: none;
+  display:block;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+
 .firstbutton {
-    display: inline-block;
-    height: 200px;
-    padding: 2px;
-    margin: 2px;
-    vertical-align: top;
-    width: 400px;
-    font-size: 20px;
-    float: left;
-    border-radius: 15px;
-    
+  background:red;
+  margin:0 auto;
+  width:100%;
+  height:100px;
+  border-radius: 25px;
 }
 
 .secondbutton {
-    display: inline-block;
-    height: 200px;
-    padding: 2px;
-    margin: 2px;
-    vertical-align: top;
-    width: 400px;
-    font-size: 20px;
-    float: left;
-    border-radius: 15px;
-
+  background:red;
+  width:100%;
+  height:100px; 
+  border-radius: 25px;
 }
 
 .thirdbutton {
-    display: inline-block;
-    height: 200px;
-    padding: 2px;
-    margin: 2px;
-    vertical-align: top;
-    width: 400px;
-    font-size: 20px;
-    float: left;
-    
-    border-radius: 15px;
-
+  background:red;
+  width:100%;
+  height:100px;
+  border-radius: 25px;
 }
 
-.container {
-
-    border: 100px;
-    padding: 15px 25px;
+.results{
+  margin-top: 30px;
 }
 
-.card {
+#Lotterypick
+.card-header{
+    background:red;
+    border-radius: 22px 22px 0px 0px;
+  }
 
-  background: rgba(255, 255, 255, 0.5);
-  border: 100px;
-  padding: 15px 50px;
-  background-color: red;
-  float: left;
-  border-radius: 15px;
-}
-.card {
-    
-  background: rgba(255, 255, 255, 0.5);
-  border: 100px;
-  padding: 20px 30px;
-  background-color: red;
-  float: right;
-  border-radius: 15px;
+#Lotterypick
+{
+  border: red solid 5px;
+  border-radius: 25px;
+  height: 100%;
+  }
+  
+
+
+#TopPerformer
+.card-header{
+  background:red;
+  border-radius: 20px 22px 0px 0px;
 }
 
-.container {
-  padding: 10px 20px;
-} */
+#TopPerformer
+{
+  border: red solid 5px;
+  border-radius: 25px;
+  height: 100%;
+  }
