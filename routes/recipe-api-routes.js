@@ -15,9 +15,7 @@ module.exports = function(app) {
   // GET route for getting all of the posts
   app.get("/api/recipes", function(req, res) {
     db.Recipe.findAll({
-      where: {
-        title: "Ziti"
-      }
+      
     }).then(function(result) {
       res.json(result);
     });
@@ -50,9 +48,10 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/recipes", function(req, res) {
-    db.Recipe.create(req.body).then(function(result) {
-      res.json(result);
-    });
+    console/log(JSON.parse(req.body));
+    // db.Recipe.create(req.body).then(function(result) {
+    //   res.json(result);
+    // });
   });
 
   // DELETE route for deleting posts
