@@ -22,13 +22,24 @@
                 </div>
                 <div>
                     <a href="Sign Up"><strong>Sign Up</strong></a>
-                    <button type="submit" class="btn btn-danger float-right">Login</button>
+                    <button id="btnLogin" type="submit" class="btn btn-danger float-right">Login</button>
                 </div>
             </div>
         </div>
 </form>
 </div>
-<script src="" type="text/javascript"></script>
+     <script>
+            $(document).ready(function () {
+                // alert("Document Ready!");
+                $('#btnLogin').click(function (event) {
+                    event.preventDefault();
+                    alert("Login!");
+                    window.location.pathname = '/dash';
+                });
+
+            });
+
+        </script>
 
 
 
