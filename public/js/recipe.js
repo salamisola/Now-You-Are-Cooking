@@ -1,5 +1,4 @@
 //RECIPE INPUT
-
 $("#inputSubmit").on("click", function (event) {
     event.preventDefault();
     console.log("click")
