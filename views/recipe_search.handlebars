@@ -51,20 +51,4 @@
     <button type="submit" class="btn btn-danger mybutton float-right" id="searchSubmit">Submit</button>
   </form>
 </div>
-<script>
-  $("#searchSubmit").on("click", function (event) {
-    event.preventDefault();
-    console.log("click")
-    // Here we grab the form elements
-    var search = {
-        searchName: $("#recipeSearchName").val().trim(),
-        searchIngred: $("#recipeSearchIngredient").val().trim(),
-        searchPrepare: $("#recipeSearchPrepare").val().trim(),
-        searchEase: $("#recipeSearchEase").val().trim(),
-        searchTaste: $("#recipeSearchTaste").val().trim(),
-      };
-      console.log(search);
-
-      $('#recipe-search-form')[0].reset();
-    });
-</script>
+<script src="/js/recipe.js"></script>

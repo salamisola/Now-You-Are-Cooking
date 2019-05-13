@@ -1,4 +1,3 @@
-<p>RECIPE FORM from Sola</p>
 <h1><i class="fas fa-search"></i> Add A Recipe</h1>
 <hr>
 <div class="container">
@@ -55,53 +54,5 @@
 
         <button type="submit" class="btn btn-danger mybutton float-right" id="inputSubmit">Submit</button>
     </form>
-    <script>
-        $(document).ready(function () {
-
-            $('#inputSubmit').click(handleForm);
-
-        });
-        function handleForm(event) {
-            event.preventDefault();
-
-            var recipeInputName = $("#recipeInputName").val();
-            var recipeInputLink = $("#recipeInputLink").val();
-            var recipeInputIngredient = $("#recipeInputIngredient").val();
-            var recipeInputPrepare = $("#recipeInputPrepare").val();
-            var recipeInputEase = $("#recipeInputEase").val();
-            var recipeInputTaste = $("#recipeInputTaste").val();
-
-            var settings = {
-                "async": true,
-
-                "url": "http://localhost:8080/api/recipes",
-                "method": "POST",
-                "headers": {
-                    "Content-Type": "application/json",
-                    
-                    "Accept": "*/*",
-                    "Cache-Control": "no-cache",
-                    "Postman-Token": "fc670151-2521-452a-8cff-8a95a3f5db98,081a90a0-078f-41e7-a48f-8ede2a887bd3",
-           
-                   
-              
-                   
-                    "cache-control": "no-cache"
-                },
-                "data": {
-                    title: recipeInputName,
-                    link: recipeInputLink,
-                    num_ing: recipeInputIngredient,
-                    time: recipeInputPrepare,
-                    rating_ease: recipeInputEase,
-                    ratting_taste: recipeInputTaste
-                }
-
-            }
-
-            $.ajax(settings).done(function (response) {
-                console.log(response);
-            });
-        }
-    </script>
 </div>
+<script src="/js/recipe.js"></script>
