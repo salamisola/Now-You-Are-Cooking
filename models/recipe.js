@@ -1,16 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Recipe = sequelize.define("Recipe", {
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [5]
-      }
-    },
-    link: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    title: DataTypes.STRING,
+    link: DataTypes.STRING,
     num_ing: DataTypes.INTEGER,
     time:DataTypes.INTEGER,
     rating_ease: DataTypes.INTEGER,
