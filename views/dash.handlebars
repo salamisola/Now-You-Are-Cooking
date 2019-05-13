@@ -54,23 +54,30 @@
 </div>
 
 <script>
+    if (sessionStorage.getItem("user") ){
+        $('.firstbutton').click(function () {
+            event.preventDefault();
+            console.log("Add click")
+            window.location.pathname = '/add'
+        })
 
-    $('.firstbutton').click(function () {
-        event.preventDefault();
-        console.log("Add click")
-        window.location.pathname = '/add'
-    })
+        $('.secondbutton').click(function () {
+            event.preventDefault();
+            console.log("Search click")
+            window.location.pathname = '/search'
+        })
 
-    $('.secondbutton').click(function () {
-        event.preventDefault();
-        console.log("Search click")
-        window.location.pathname = '/search'
-    })
+        $('.thirdbutton').click(function () {
+            event.preventDefault();
+            console.log("Rate click")
+            window.location.pathname = '/rate'
+        })
 
-    $('.thirdbutton').click(function () {
-        event.preventDefault();
-        console.log("Rate click")
-        window.location.pathname = '/rate'
-    })
+
+    }
+    else {
+        window.location.href = "/";
+    }
+
 
 </script>

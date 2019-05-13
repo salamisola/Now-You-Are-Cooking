@@ -50,8 +50,12 @@
         }
 
         $.ajax(settings).done(function (response) {
+            alert("ajax done");
             console.log("Test Login");
-            console.log(response.dataValues);
+            console.log(JSON.stringify(response));
+            sessionStorage.setItem("user", "exists");
+            sessionStorage.removeItem("user");
+           // document.location.href = "/dash";
         });
     }
 </script>
