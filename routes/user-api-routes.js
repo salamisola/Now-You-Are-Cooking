@@ -31,7 +31,7 @@ module.exports = function(app) {
 
   app.post("/api/login", function(req, res) {
     // Create an Author with the data available to us in req.body
-   
+   console.log("test");
     var name = req.body.name;
     var pass = req.body.pass;
     console.log(name);

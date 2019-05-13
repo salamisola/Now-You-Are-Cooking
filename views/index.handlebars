@@ -37,17 +37,13 @@
     function handleLogin(event) {
         event.preventDefault();
         var inputName = $("#InputEmail").val();
-        var inputPass = $("#InputPassword");
+        var inputPass = $("#InputPassword").val();
         var settings = {
             "async": true,
 
-            "url": "http://localhost:8080/api/login",
+            "url": "/api/login",
             "method": "POST",
-            "headers": {
-                "Content-Type": "application/json",
-                "cache-control": "no-cache"
-
-            },
+       
             "data": { name: inputName, pass:inputPass }
 
         }
