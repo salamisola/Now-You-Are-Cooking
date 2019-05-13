@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     num_ing: DataTypes.INTEGER,
     time:DataTypes.INTEGER,
     rating_ease: DataTypes.INTEGER,
-    rating_taste: DataTypes.INTEGER
+    rating_taste: DataTypes.INTEGER,
+    recipe_score:DataTypes.STRING
   });
 
   // Post.associate = function(models) {
