@@ -54,8 +54,8 @@
 </div>
 
 <script>
-    if (sessionStorage.getItem("user") ){
-        $('.firstbutton').click(function () {
+    if(sessionStorage.user) {
+         $('.firstbutton').click(function () {
             event.preventDefault();
             console.log("Add click")
             window.location.pathname = '/add'
@@ -72,12 +72,15 @@
             console.log("Rate click")
             window.location.pathname = '/rate'
         })
-
-
     }
     else {
         window.location.href = "/";
     }
+
+
+
+        
+    
 
 
 </script>
