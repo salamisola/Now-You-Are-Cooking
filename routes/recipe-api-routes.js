@@ -7,7 +7,8 @@
 
 // Requiring our models
 var db = require("../models");
-
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -15,7 +16,11 @@ module.exports = function(app) {
   // GET route for getting all of the posts
   app.get("/api/recipes", function(req, res) {
     db.Recipe.findAll({
-      
+      where: {
+        title: {
+          [Op.like]: '%Bol%'
+        }
+      }
     }).then(function(result) {
       res.json(result);
     });
