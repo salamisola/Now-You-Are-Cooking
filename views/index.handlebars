@@ -36,6 +36,7 @@
     });
     function handleLogin(event) {
         event.preventDefault();
+        console.log("Login");
         var inputName = $("#InputEmail").val();
         var inputPass = $("#InputPassword").val();
         var settings = {
@@ -43,13 +44,14 @@
 
             "url": "/api/login",
             "method": "POST",
-       
-            "data": { name: inputName, pass:inputPass }
+
+            "data": { name: inputName, pass: inputPass }
 
         }
 
         $.ajax(settings).done(function (response) {
-            console.log(response);
+            console.log("Test Login");
+            console.log(response.dataValues);
         });
     }
 </script>
