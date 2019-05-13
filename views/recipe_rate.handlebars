@@ -50,4 +50,17 @@
 
         <button type="submit" class="btn btn-danger mybutton float-right" id="inputSubmit">Submit</button>
     </form>
+    <script>
+         var settings = {
+            "async": true,
+            "url": "/api/recipes",
+            "method": "GET"
+        }
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+
+
+        
+    </script>
 </div>
