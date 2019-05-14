@@ -57,14 +57,14 @@ $("#rateSubmit").on("click", function (event) {
   event.preventDefault();
   console.log("rate click")
   // Here we grab the form elements
-  var updateRecipe = {
-    title: $("#recipeRateName").val().trim(),
-    num_ing: $("#recipeRateIngredient").val().trim(),
-    time: $("#recipeRatePrepare").val().trim(),
+  var newRating = {
+    userId: sessionStorage.getItem("user");
+    recipeId: $("#recipeRateName").val().trim(),
+    
     rating_ease: $("#recipeRateEase").val().trim(),
     rating_taste: $("#recipeRateTaste").val().trim(),
   };
-  console.log(updateRecipe);
+  console.log(newRating);
 
   $('#recipe-rate-form')[0].reset();
 });
