@@ -43,8 +43,8 @@
         var inputPass = $("#InputPassword").val();
         sessionStorage.setItem("user", inputName);
        
-        console.log("InputName: " + inputName);
-        console.log("InputPass: " + inputPass);
+        // console.log("InputName: " + inputName);
+       // console.log("InputPass: " + inputPass);
         loginData = {
             name:inputName,
             pass:inputPass
@@ -61,19 +61,16 @@
             data: loginData,
             async:true,
         }).done(function (response) {
-            // alert("ajax done");
-            console.log("Test Login");
-            console.log(JSON.stringify(response));
-            // console.log(response);
-            if(response.name) {
+       
+            if(!!response) {
                 sessionStorage.setItem("user", response.id);
                  console.log(sessionStorage.getItem("user"))
-              //  window.location.href="/dash";
+                window.location.href="/dash";
 
            }
             else {
                    sessionStorage.removeItem("user");
-                   // window.location.href="/";
+                   window.location.href="/signup";
             }
            
         });
@@ -82,7 +79,7 @@
 
         $('#signUp').click(function () {
             event.preventDefault();
-            console.log("Add click")
+           // console.log("Add click")
             window.location.pathname = '/signup'
         });
 

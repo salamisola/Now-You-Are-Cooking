@@ -20,7 +20,8 @@ $("#btnSignUp").on("click", function (event) {
     }).then(
         function () {
             console.log("added member");
-            //location.reload();
+            window.location.href = "/dash";
+            
         }
     );
    
