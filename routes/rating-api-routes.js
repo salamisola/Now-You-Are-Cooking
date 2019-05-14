@@ -33,17 +33,17 @@ module.exports = function(app) {
       db.Post.findAll({
         where: query
       }).then(function(result) {
-        console.log
+        console.log(JSON.stringify(result));
         res.json(result);
       });
     });
   
     // POST route for saving a new post
     app.post("/api/ratings", function(req, res) {
-      console/log(JSON.parse(req.body));
-      // db.Recipe.create(req.body).then(function(result) {
-      //   res.json(result);
-      // });
+      // console.log(JSON.parse(req.body));
+      db.Rating.create(req.body).then(function(result) {
+        res.json(result);
+      });
     });
   
     // DELETE route for deleting posts
