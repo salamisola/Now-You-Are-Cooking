@@ -31,36 +31,49 @@
     $(document).ready(function () {
 
         $('#btnLogin').click(handleLogin);
+        console.log("Session Storage: " + sessionStorage.getItem("user"));
+        
 
     });
     function handleLogin(event) {
         event.preventDefault();
-        console.log("Login");
+       
+        console.log("Login2");
         var inputName = $("#InputEmail").val();
         var inputPass = $("#InputPassword").val();
+        sessionStorage.setItem("user", inputName);
+       
+        console.log("InputName: " + inputName);
+        console.log("InputPass: " + inputPass);
+        loginData = {
+            name:inputName,
+            pass:inputPass
+        }
         var settings = {
             "async": true,
-
             "url": "/api/login",
             "method": "POST",
-
-            "data": { name: inputName, pass: inputPass }
-
+            "data": loginData
         }
 
-        $.ajax(settings).done(function (response) {
-            alert("ajax done");
+        $.ajax("/api/login", {
+            type:"POST",
+            data: loginData,
+            async:true,
+        }).done(function (response) {
+            // alert("ajax done");
             console.log("Test Login");
             console.log(JSON.stringify(response));
-            console.log(response.name);
+            // console.log(response);
             if(response.name) {
-                 sessionStorage.setItem("user", "exists");
-                window.location.href="/dash";
+                sessionStorage.setItem("user", response.name);
+                 console.log(sessionStorage.getItem("user"))
+              //  window.location.href="/dash";
 
-            }
+           }
             else {
                    sessionStorage.removeItem("user");
-                window.location.href="/";
+                   // window.location.href="/";
             }
            
         });
