@@ -6,19 +6,19 @@
                     <div class="form-group">
                         <h1>Now You're Cookin'</h1>
                         <div>
-                            <label for="exampleInputEmail1"><strong>Login</strong></label>
+                            <label for="exampleInputEmail1"><strong> Sign Up</strong></label>
                             <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"
                                 placeholder="Username">
                         </div>
                         <div>
                             <br>
                             <input type="password" class="form-control" id="InputPassword" placeholder="Password">
-
+                            <input type="password" class="form-control" id="InputPassword" placeholder="Confirm Password">
                         </div>
                         <div>
                             <br>
-                            <button id="signUp" type="button" class="btn btn-link">Sign Up</button>
-                            <button id="btnLogin" type="button" class="btn btn-danger float-right">Login</button>
+
+                            <button id="btnSignUp" type="button" class="btn btn-danger float-left">Sign Up</button>
                         </div>
                     </div>
                 </form>
@@ -35,7 +35,6 @@
     });
     function handleLogin(event) {
         event.preventDefault();
-        console.log("Login");
         var inputName = $("#InputEmail").val();
         var inputPass = $("#InputPassword").val();
         var settings = {
@@ -49,30 +48,9 @@
         }
 
         $.ajax(settings).done(function (response) {
-            alert("ajax done");
-            console.log("Test Login");
-            console.log(JSON.stringify(response));
-            console.log(response.name);
-            if(response.name) {
-                 sessionStorage.setItem("user", "exists");
-                window.location.href="/dash";
-
-            }
-            else {
-                   sessionStorage.removeItem("user");
-                window.location.href="/";
-            }
-           
+            console.log(response);
         });
-
-    };
-
-        $('#signUp').click(function () {
-            event.preventDefault();
-            console.log("Add click")
-            window.location.pathname = '/signup'
-        });
-
+    }
 
 
 </script>

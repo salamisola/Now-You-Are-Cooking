@@ -1,12 +1,20 @@
 module.exports = function(sequelize, DataTypes) {
   var Recipe = sequelize.define("Recipe", {
-    title: DataTypes.STRING,
-    link: DataTypes.STRING,
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [5]
+      }
+    },
+    link: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     num_ing: DataTypes.INTEGER,
     time:DataTypes.INTEGER,
     rating_ease: DataTypes.INTEGER,
-    rating_taste: DataTypes.INTEGER,
-    recipe_score:DataTypes.STRING
+    rating_taste: DataTypes.INTEGER
   });
 
   // Post.associate = function(models) {

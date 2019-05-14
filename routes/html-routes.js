@@ -17,6 +17,10 @@ module.exports = function(app) {
     res.render('index');
   });
 
+  app.get("/signup", function(req, res) {
+    res.render('signup');
+  });
+
   app.get("/dash", function(req, res) {
     res.render('dash');
   });

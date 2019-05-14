@@ -1,70 +1,56 @@
-<h1><i class="fas fa-search"></i> Search A Recipe</h1>
-<hr>
-<div class="container">
-  <form id="recipe-search-form">
-    <div class="form-group">
-      <label for="recipeSearch">Recipe</label>
-      <input type="recipeName" class="form-control" id="recipeSearchName" placeholder="Enter recipe name">
-      <small id="Help" class="form-text text-muted">Add recipe name keywords</small>
-    </div>
+<div class="container-fluid">
+  <h1> Search A Recipe</h1>
+  <hr>
+  <div class="container">
+    <form id="recipe-search-form">
+      <div class="form-group">
+        <label for="recipeSearch">Recipe</label>
+        <input type="recipeName" class="form-control" id="recipeSearchName" placeholder="Enter recipe name">
+        <small id="Help" class="form-text text-muted">Add recipe name keywords</small>
+      </div>
 
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">How many ingredients?</label>
-      <select class="form-control" id="recipeSearchIngredient">
-        <option value="1">Less than 5</option>
-        <option value="2">5 to 10</option>
-        <option value="3">More than 10</option>
-      </select>
-    </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">How many ingredients?</label>
+        <select class="form-control" id="recipeSearchIngredient">
+          <option value="1">Less than 5</option>
+          <option value="2">5 to 10</option>
+          <option value="3">More than 10</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">How long to prepare?</label>
-      <select class="form-control" id="recipeSearchPrepare">
-        <option value="1">Less than 30 minutes</option>
-        <option value="2">30 to 60 minutes</option>
-        <option value="3">More than 60 minutes</option>
-      </select>
-    </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">How long to prepare?</label>
+        <select class="form-control" id="recipeSearchPrepare">
+          <option value="1">Less than 30 minutes</option>
+          <option value="2">30 to 60 minutes</option>
+          <option value="3">More than 60 minutes</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Ease of Prep</label>
-      <select class="form-control" id="recipeSearchEase">
-        <option value="1">1 Not Very Easy</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 So Easy</option>
-      </select>
-    </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Ease of Prep</label>
+        <select class="form-control" id="recipeSearchEase">
+          <option value="1">1 Not Very Easy</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 So Easy</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Taste</label>
-      <select class="form-control" id="recipeSearchTaste">
-        <option value="1">1 Not Very Tasty</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 Very Tasty</option>
-      </select>
-    </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Taste</label>
+        <select class="form-control" id="recipeSearchTaste">
+          <option value="1">1 Not Very Tasty</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 Very Tasty</option>
+        </select>
+      </div>
 
-    <button type="submit" class="btn btn-danger mybutton float-right" id="searchSubmit">Submit</button>
-  </form>
+      <button type="submit" class="btn btn-danger mybutton float-right" id="searchSubmit">Submit</button>
+    </form>
+  </div>
 </div>
-<script>
-  $("#searchSubmit").on("click", function (event) {
-    event.preventDefault();
-    console.log("click")
-    // Here we grab the form elements
-    var search = {
-        searchName: $("#recipeSearchName").val().trim(),
-        searchIngred: $("#recipeSearchIngredient").val().trim(),
-        searchPrepare: $("#recipeSearchPrepare").val().trim(),
-        searchEase: $("#recipeSearchEase").val().trim(),
-        searchTaste: $("#recipeSearchTaste").val().trim(),
-      };
-      console.log(search);
-
-      $('#recipe-search-form')[0].reset();
-    });
-</script>
+<script src="/js/recipe.js"></script>
