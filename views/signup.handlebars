@@ -13,7 +13,7 @@
                         <div>
                             <br>
                             <input type="password" class="form-control" id="InputPassword" placeholder="Password">
-                            <input type="password" class="form-control" id="InputPassword" placeholder="Confirm Password">
+                            <input type="password" class="form-control" id="InputPasswordC" placeholder="Confirm Password">
                         </div>
                         <div>
                             <br>
@@ -26,31 +26,8 @@
         </div>
     </div>
 </div>
-<script>
+<script src="/js/signup.js"></script>
 
-    $(document).ready(function () {
-
-        $('#btnLogin').click(handleLogin);
-
-    });
-    function handleLogin(event) {
-        event.preventDefault();
-        var inputName = $("#InputEmail").val();
-        var inputPass = $("#InputPassword").val();
-        var settings = {
-            "async": true,
-
-            "url": "/api/login",
-            "method": "POST",
-
-            "data": { name: inputName, pass: inputPass }
-
-        }
-
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
-    }
+    
 
 
-</script>
