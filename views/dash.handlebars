@@ -47,7 +47,9 @@
 
 
 <script>
-    if(sessionStorage.user!=="") {
+    var user = sessionStorage.getItem("user");
+    console.log("User: " + user );
+    if(!!user) {
         $('#navbtnone').click(function () {
             event.preventDefault();
             console.log("Add click")
