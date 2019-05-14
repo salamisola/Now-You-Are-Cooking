@@ -82,10 +82,15 @@
                     rating_taste: $("#recipeRateTaste").val().trim(),
                 };
                 console.log(newRating);
-
-                $('#recipe-rate-form')[0].reset();
+                $.ajax("/api/ratings", {
+                    type: "POST",
+                    data: newRating,
+                    async: true
+                }).then(
+                    function () {
+                        console.log("added rating");
+                    }
+                );
             });
-
-
         </script>
     </div>

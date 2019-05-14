@@ -40,7 +40,7 @@ module.exports = function(app) {
   
     // POST route for saving a new post
     app.post("/api/ratings", function(req, res) {
-      console.log(JSON.parse(req.body));
+      // console.log(JSON.parse(req.body));
       db.Rating.create(req.body).then(function(result) {
         res.json(result);
       });
