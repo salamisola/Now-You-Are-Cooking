@@ -18,8 +18,9 @@ $("#btnSignUp").on("click", function (event) {
         data: newSignup,
         async: true,
     }).then(
-        function () {
+        function (response) {
             console.log("added member");
+            sessionStorage.setItem("user", response.id );
             window.location.href = "/dash";
             
         }

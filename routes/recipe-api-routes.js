@@ -29,7 +29,7 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(function(result) {
-      console.log(result);
+      // console.log(result);
       res.json(result);
     });
   });
