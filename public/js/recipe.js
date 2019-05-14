@@ -1,7 +1,7 @@
 //RECIPE INPUT
 $("#inputSubmit").on("click", function (event) {
   event.preventDefault();
-  console.log("click")
+  console.log("click recipe")
   // Here we grab the form elements
   var recInpIng = $("#recipeInputIngredient").val().trim();
   var recInpTime = $("#recipeInputPrepare").val().trim();
@@ -58,7 +58,7 @@ $("#rateSubmit").on("click", function (event) {
   console.log("rate click")
   // Here we grab the form elements
   var newRating = {
-    userId: sessionStorage.getItem("user");
+    userId: sessionStorage.getItem("user"),
     recipeId: $("#recipeRateName").val().trim(),
     
     rating_ease: $("#recipeRateEase").val().trim(),
