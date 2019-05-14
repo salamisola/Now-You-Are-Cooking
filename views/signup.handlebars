@@ -6,19 +6,19 @@
                     <div class="form-group">
                         <h1>Now You're Cookin'</h1>
                         <div>
-                            <label for="exampleInputEmail1"><strong>Login</strong></label>
+                            <label for="exampleInputEmail1"><strong> Sign Up</strong></label>
                             <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"
                                 placeholder="Username">
                         </div>
                         <div>
                             <br>
                             <input type="password" class="form-control" id="InputPassword" placeholder="Password">
-
+                            <input type="password" class="form-control" id="InputPassword" placeholder="Confirm Password">
                         </div>
                         <div>
                             <br>
-                            <button id="signUp" type="button" class="btn btn-link">Sign Up</button>
-                            <button id="btnLogin" type="button" class="btn btn-danger float-right">Login</button>
+
+                            <button id="btnSignUp" type="button" class="btn btn-danger float-left">Sign Up</button>
                         </div>
                     </div>
                 </form>
@@ -50,15 +50,7 @@
         $.ajax(settings).done(function (response) {
             console.log(response);
         });
-
-    };
-
-        $('#signUp').click(function () {
-            event.preventDefault();
-            console.log("Add click")
-            window.location.pathname = '/signup'
-        });
-
+    }
 
 
 </script>

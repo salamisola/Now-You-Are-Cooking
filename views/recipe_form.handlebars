@@ -1,58 +1,60 @@
-<h1><i class="fas fa-search"></i> Add A Recipe</h1>
-<hr>
-<div class="container">
-    <form id="recipe-input-form">
-        <div class="form-group">
-            <label for="recipeInput">Recipe</label>
-            <input class="form-control" id="recipeInputName" placeholder="Enter recipe name">
-        </div>
+<div class="container-fluid">
+    <h1>Add A Recipe</h1>
+    <hr>
+    <div class="container">
+        <form id="recipe-input-form">
+            <div class="form-group">
+                <label for="recipeInput">Recipe</label>
+                <input class="form-control" id="recipeInputName" placeholder="Enter recipe name">
+            </div>
 
-        <div class="form-group">
-            <label for="recipeInput">Link</label>
-            <input class="form-control" id="recipeInputLink" placeholder="Enter recipe link">
-        </div>
+            <div class="form-group">
+                <label for="recipeInput">Link</label>
+                <input class="form-control" id="recipeInputLink" placeholder="Enter recipe link">
+            </div>
 
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">How many ingredients?</label>
-            <select class="form-control" id="recipeInputIngredient">
-                <option value="1">Less than 5</option>
-                <option value="2">5 to 10</option>
-                <option value="3">More than 10</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">How many ingredients?</label>
+                <select class="form-control" id="recipeInputIngredient">
+                    <option value="1">Less than 5</option>
+                    <option value="2">5 to 10</option>
+                    <option value="3">More than 10</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">How long to prepare?</label>
-            <select class="form-control" id="recipeInputPrepare">
-                <option value="1">Less than 30 minutes</option>
-                <option value="2">30 to 60 minutes</option>
-                <option value="3">More than 60 minutes</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">How long to prepare?</label>
+                <select class="form-control" id="recipeInputPrepare">
+                    <option value="1">Less than 30 minutes</option>
+                    <option value="2">30 to 60 minutes</option>
+                    <option value="3">More than 60 minutes</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Ease of Prep</label>
-            <select class="form-control" id="recipeInputEase">
-                <option value="1">1 Not Very Easy</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 So Easy</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Ease of Prep</label>
+                <select class="form-control" id="recipeInputEase">
+                    <option value="1">1 Not Very Easy</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 So Easy</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Taste</label>
-            <select class="form-control" id="recipeInputTaste">
-                <option value="1">1 Not Very Tasty</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 Very Tasty</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Taste</label>
+                <select class="form-control" id="recipeInputTaste">
+                    <option value="1">1 Not Very Tasty</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 Very Tasty</option>
+                </select>
+            </div>
 
-        <button type="submit" class="btn btn-danger mybutton float-right" id="inputSubmit">Submit</button>
-    </form>
+            <button type="submit" class="btn btn-danger mybutton float-right" id="inputSubmit">Submit</button>
+        </form>
+    </div>
 </div>
 <script src="/js/recipe.js"></script>
