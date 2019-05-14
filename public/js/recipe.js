@@ -27,7 +27,7 @@ $("#inputSubmit").on("click", function (event) {
   }).then(
     function () {
       console.log("added recipe");
-      location.reload();
+      window.location.href = "/dash";
     }
   );
   $('#recipe-input-form')[0].reset();
