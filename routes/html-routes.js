@@ -22,7 +22,7 @@ module.exports = function(app) {
   });
 
   app.get("/dash", function(req, res) {
-    res.render('dash');
+    res.render('dash', {link:'/rate'});
   });
 
   app.get("/add", function(req, res) {

@@ -20,9 +20,9 @@ $.ajax(settings).done(function (response) {
             // console.log(lotteryPick);
             var p = $("<p></p>");
             console.log(response.title);
-            p.text(response.title);
+            p.html("<h5>"+response.title+"</h5");
             $("#divLottery").append(p);
-            
+            var link = response.link;
         }
     );
     

@@ -1,3 +1,5 @@
+
+<script src="/js/lottery.js"></script>
 <div class="container-fluid">
     <h1>Now You're Cookin'</h1>
 
@@ -32,7 +34,7 @@
                 <div id="lotteryPick" class="col-md-4">
                     <h2><i class="fa fa-gift" aria-hidden="true" style="font-size:36px"></i>Lottery Recipe</h2>
                     <div id="divLottery"></div>
-                    <a href="#" class="btn btn-danger float-right" id="lrLinkGo">Go to recipe</a>
+                    <a href={{link}} class="btn btn-danger float-right" id="lrLinkGo">{{link}}</a>
                 </div>
                 <div id="topPerformers" class="col-md-7">
                     <h2><i class="fa fa-star" style="font-size:36px"></i><i class="fa fa-star" style="font-size:36px"></i><i class="fa fa-star" style="font-size:36px"></i><i class="fa fa-star" style="font-size:36px"></i><i class="fa fa-star" style="font-size:36px"></i>Top Performers</h2>
@@ -45,7 +47,7 @@
             </div>
         </div>
     </div>
-<script src="/js/lottery.js"></script>
+
 
 <script>
     var user = sessionStorage.getItem("user");
