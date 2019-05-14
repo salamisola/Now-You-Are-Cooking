@@ -53,6 +53,25 @@ module.exports = function (app) {
     });
 
   });
+  app.post("/api/newuser", function (req, res) {
+    // Create an Author with the data available to us in req.body
+    console.log("New User");
+    var name = req.body.name;
+    var pass = req.body.pass;
+    console.log(name);
+    console.log(pass);
+
+    db.User.create(req.body).then(function (result) {
+      if (result) {
+        console.log(result.dataValues);
+        res.json(result);
+      }
+      else {
+       
+      }
+    });
+
+  });
   app.delete("/api/users/:id", function (req, res) {
     // Delete the Author with the id available to us in req.params.id
     db.User.destroy({

@@ -8,12 +8,12 @@ $("#btnSignUp").on("click", function (event) {
     console.log(inputPass);
 
     var newSignup = {
-        email: $("#InputEmail").val(),
-        password: $("#InputPassword").val(),
+        name: $("#InputEmail").val(),
+        pass: $("#InputPassword").val(),
     };
     console.log(newSignup);
   
-    $.ajax("/api/login", {
+    $.ajax("/api/newuser", {
         type: "POST",
         data: newSignup,
         async: true,
