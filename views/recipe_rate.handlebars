@@ -5,7 +5,7 @@
     <form id="recipe-rate-form">
         <div class="form-group">
             <label for="recipeRateName">Recipe</label>
-            <input class="form-control" id="recipeRatetName" placeholder="Enter recipe name">
+            <select class="form-control" id="recipeRatetName"></select>
         </div>
 
         <div class="form-group">
@@ -51,15 +51,26 @@
         <button type="submit" class="btn btn-danger mybutton float-right" id="inputSubmit">Submit</button>
     </form>
     <script>
+         var tempArr;
+         var recipeRatetName = $("#recipeRatetName");
+
          var settings = {
             "async": true,
             "url": "/api/recipes",
             "method": "GET"
         }
         $.ajax(settings).done(function (response) {
-            console.log(response);
+            console.log(response);  
+            for (var i=0;i<response.length;i++) {
+                var title = response[i].title;
+                var id = response[i].id;
+                 $("#recipeRatetName").append($("<option></option>").val(id).html(title));
+            }
+            
+                
+            
         });
-
+        
 
         
     </script>
