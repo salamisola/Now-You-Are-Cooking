@@ -45,8 +45,9 @@
         </div>
     </div>
 
-    <script>
 
+<script>
+    if(sessionStorage.user!=="") {
         $('#navbtnone').click(function () {
             event.preventDefault();
             console.log("Add click")
@@ -64,5 +65,9 @@
             console.log("Rate click")
             window.location.pathname = '/rate'
         })
+    }
+    else {
+        window.location.href = "/";
+    }
 
     </script>

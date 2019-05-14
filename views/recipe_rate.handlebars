@@ -48,9 +48,31 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-danger mybutton float-right" id="rateSubmit">Submit</button>
-        </form>
-    </div>
+        <button type="submit" class="btn btn-danger mybutton float-right" id="inputSubmit">Submit</button>
+    </form>
+    <script>
+         var tempArr;
+         var recipeRatetName = $("#recipeRatetName");
+
+         var settings = {
+            "async": true,
+            "url": "/api/recipes",
+            "method": "GET"
+        }
+        $.ajax(settings).done(function (response) {
+            console.log(response);  
+            for (var i=0;i<response.length;i++) {
+                var title = response[i].title;
+                var id = response[i].id;
+                 $("#recipeRatetName").append($("<option></option>").val(id).html(title));
+            }
+            
+                
+            
+        });
+        
+
+        
+    </script>
 </div>
 
-<script src="/js/recipe.js"></script>

@@ -7,7 +7,8 @@
 
 // Requiring our models
 var db = require("../models");
-
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 // Routes
 // =============================================================
 module.exports = function(app) {
