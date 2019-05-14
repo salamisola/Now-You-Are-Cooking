@@ -30,12 +30,12 @@ module.exports = function (app) {
   });
 
   app.post("/api/login", function (req, res) {
-    // Create an Author with the data available to us in req.body
-    console.log("test");
+
+   
     var name = req.body.name;
     var pass = req.body.pass;
-    console.log(name);
-    console.log(pass);
+    console.log("Name: " + name);
+    console.log("Pass: " + pass);
 
     db.User.findOne({
       where: {
@@ -43,13 +43,11 @@ module.exports = function (app) {
         pass: pass
       }
     }).then(function (result) {
-      if (result) {
-        console.log(result.dataValues);
+      
+        // console.log(result.dataValues);
+
         res.json(result);
-      }
-      else {
-       
-      }
+      
     });
 
   });

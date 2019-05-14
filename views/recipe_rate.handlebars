@@ -48,7 +48,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-danger mybutton float-right" id="inputSubmit">Submit</button>
+            <button type="submit" class="btn btn-danger mybutton float-right" id="rateSubmit">Submit</button>
         </form>
         <script>
             var tempArr;
@@ -59,17 +59,38 @@
                 "method": "GET"
             }
             $.ajax(settings).done(function (response) {
-              console.log("recipe rate:" + JSON.stringify(response));
-             
+                // console.log("recipe rate:" + JSON.stringify(response));
+
                 for (var i = 0; i < response.length; i++) {
                     var title = response[i].title;
-                    console.log("title: " + title);
-                    
+                    // console.log("title: " + title);
+
                     var id = response[i].id;
-                    console.log("Id; " + id);
+                    //   console.log("Id; " + id);
                     $("#recipeRateName").append($("<option></option>").val(id).html(title));
                 }
             });
 
+            $("#rateSubmit").on("click", function (event) {
+                event.preventDefault();
+                console.log("rate click")
+                // Here we grab the form elements
+                var newRating = {
+                    userId: sessionStorage.getItem("user"),
+                    recipeId: $("#recipeRateName").val().trim(),
+                    rating_ease: $("#recipeRateEase").val().trim(),
+                    rating_taste: $("#recipeRateTaste").val().trim(),
+                };
+                console.log(newRating);
+                $.ajax("/api/ratings", {
+                    type: "POST",
+                    data: newRating,
+                    async: true
+                }).then(
+                    function () {
+                        console.log("added rating");
+                    }
+                );
+            });
         </script>
     </div>
