@@ -38,9 +38,8 @@
                 </div>
                 <div id="topPerformers" class="col-md-7">
                     <h2><i class="fa fa-star" style="font-size:36px"></i><i class="fa fa-star" style="font-size:36px"></i><i class="fa fa-star" style="font-size:36px"></i><i class="fa fa-star" style="font-size:36px"></i><i class="fa fa-star" style="font-size:36px"></i>Top Performers</h2>
-                    <ul class="list-group list-group-flush">
-                        {{#each recipes}}
-                        {{/each}}
+                    <ul class="topPerform" class="list-group list-group-flush">
+                     
                     </ul>
                 </div>
 
@@ -58,13 +57,11 @@
             console.log("Add click")
             window.location.pathname = '/add'
         })
-
         $('#navbtntwo').click(function () {
             event.preventDefault();
             console.log("Search click")
             window.location.pathname = '/search'
         })
-
         $('#navbtnthree').click(function () {
             event.preventDefault();
             console.log("Rate click")
@@ -74,5 +71,4 @@
     else {
         window.location.href = "/";
     }
-
     </script>

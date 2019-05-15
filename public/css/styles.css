@@ -102,3 +102,16 @@ h3{
   height: 200px;
   margin-top: 20px;
  }
+
+ .recipeCard{
+   margin: 20px;
+ }
+
+#searchResults{
+  border: gray solid 1px;
+  border-radius: 25px;
+  padding: 20px;
+  margin: auto;
+  height: 200px;
+  margin-top: 20px;
+ }
