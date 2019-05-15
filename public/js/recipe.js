@@ -7,11 +7,13 @@ $("#inputSubmit").on("click", function (event) {
   var recInpTime = $("#recipeInputPrepare").val().trim();
   var recInpEase = $("#recipeInputEase").val().trim();
   var recInpTaste = $("#recipeInputTaste").val().trim();
+
+  var recInpLink =$("#recipeInputLink").val().trim();
   var recInpScore = recInpIng + "," + recInpTime + "," + recInpEase + "," + recInpTaste;
 
   var newRecipe = {
     title: $("#recipeInputName").val().trim(),
-    link: $("#recipeInputLink").val().trim(),
+    link: recInpLink,
     num_ing: recInpIng,
     time: recInpTime,
     rating_ease: recInpEase,
@@ -33,38 +35,48 @@ $("#inputSubmit").on("click", function (event) {
   $('#recipe-input-form')[0].reset();
 });
 
-//SEARCH INPUT
+$(document).ready(function () {
+  // blogContainer holds all of our recipes
+  var topPerformList = $(".topPerform");
 
-$("#searchSubmit").on("click", function (event) {
-  event.preventDefault();
-  console.log("click")
-  // Here we grab the form elements
-  var search = {
-    searchName: $("#recipeSearchName").val().trim(),
-    searchIngred: $("#recipeSearchIngredient").val().trim(),
-    searchPrepare: $("#recipeSearchPrepare").val().trim(),
-    searchEase: $("#recipeSearchEase").val().trim(),
-    searchTaste: $("#recipeSearchTaste").val().trim(),
-  };
-  console.log(search);
+  var recipes;
 
-  $('#recipe-search-form')[0].reset();
+  // This function grabs Recipes from the database and updates the view
+  function getRecipes() {
+    $.get("/api/recipe_top/top", function (data) {
+      console.log("Recipes", data);
+      recipes = data;
+      if (!recipes || !recipes.length) {
+        displayEmpty();
+      }
+      else {
+        initializeRows();
+      }
+    });
+  }
+
+
+  // Getting the initial list of Recipes
+  getRecipes();
+  // InitializeRows handles appending all of our constructed Recipe HTML inside
+  // blogContainer
+  function initializeRows() {
+    topPerformList.empty();
+    var recipesToAdd = [];
+    for (var i = 0; i < recipes.length; i++) {
+      recipesToAdd.push(createNewRow(recipes[i]));
+    }
+    topPerformList.append(recipesToAdd);
+  }
+
+  // This function constructs a Recipe's HTML
+  function createNewRow(recipe) {
+    var newRecipeItem= $("<li>");
+    newRecipeItem.text(recipe.title + " ");
+
+    newRecipeItem.data("Recipe", recipe);
+       return newRecipeItem;
+  }
+
 });
 
-//RATE INPUT
-
-$("#rateSubmit").on("click", function (event) {
-  event.preventDefault();
-  console.log("rate click")
-  // Here we grab the form elements
-  var newRating = {
-    userId: sessionStorage.getItem("user"),
-    recipeId: $("#recipeRateName").val().trim(),
-    
-    rating_ease: $("#recipeRateEase").val().trim(),
-    rating_taste: $("#recipeRateTaste").val().trim(),
-  };
-  console.log(newRating);
-
-  $('#recipe-rate-form')[0].reset();
-});

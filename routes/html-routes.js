@@ -37,5 +37,8 @@ module.exports = function(app) {
     res.render('recipe_rate');
   });
 
+  app.get("/searchall", function(req, res) {
+    res.render('recipe_search_all');
+  });
 
 };
